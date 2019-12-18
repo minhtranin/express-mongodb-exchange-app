@@ -4,23 +4,35 @@ const Schema = mongoose.Schema
 const uniqueValidator = require('mongoose-unique-validator')
 
 const schema = new Schema({
-    user_id:{
+    customer_id:{
         type:Object,
         required: true
     },
-    access_token:{
-        type:String,
+    to_customer:{
+        type:Object,
         required: true,
 
     },
-    expired_at:{
-        type:Date,
+    content:{
+        type:String,
    
-    }
+    },
+    image:{
+        type:String,
+
+    },
+    file:{
+        type:String,
+
+    },
+    location:{
+        type:String,
+        
+    },
 },
 {
     timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 })
 schema.plugin(uniqueValidator);
-const UserToken = mongoose.model('user_tokens',schema)
-module.exports = UserToken
+const CustomerMessage = mongoose.model('customer_messages',schema)
+module.exports = CustomerMessage

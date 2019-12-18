@@ -6,7 +6,7 @@ const admin = require('./Controllers/AuthController')
 
 
 /*auth admin */
-router.get('/create',  admin.create)
+router.post('/create',  admin.create)
 router.post('/login', admin.login)
 router.post('/verify', admin.verify)
 /**auth admin */

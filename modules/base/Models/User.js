@@ -28,7 +28,7 @@ const schema = new Schema({
     },
     image:{
         type:String,
-        required: true
+       // required: true
     },
     country:{
         type:String,
@@ -44,9 +44,12 @@ const schema = new Schema({
     },
     token:{
         type:String,
-        required: true,
-        unique: true
+        
     },
+    role:{
+        type:Number,
+        
+    }
    
 },
 {

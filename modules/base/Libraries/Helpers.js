@@ -1,16 +1,16 @@
 'use strict'
 
-
+const Env = use('Env')
 
 class Helpers{
     static generateToken(limit = 40) {
         var uid = require('rand-token')
-        var token = process.env.APP_NAME +'-' + uid.generate(limit)
+        var token = Env.get('APP_NAME','icarebase') +'-' + uid.generate(limit)
         return token
     }
     static generateKeySponsor(limit = 7) {
         var uid = require('rand-token')
-        var token = process.env.APP_NAME + uid.generate(limit)
+        var token = 'ICB' + uid.generate(limit)
         return token
     }
 

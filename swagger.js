@@ -3,16 +3,27 @@ const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerOptions = {
   swaggerDefinition: {
     info: {
-      title: "Customer API",
-      description: "Customer API Information",
+      title: "GCOM API",
+      description: "classify app API",
+      version:"3.0.0",
       contact: {
-        name: "Amazing Developer"
+        name: "TCM"
       },
-      servers: ["http://localhost:9090"]
+      basePath: '/',
+      //servers: ["http://localhost:9090"]
+    },
+    securityDefinitions: {
+      Bearer: {
+          type: "apiKey",
+          name: "Authorization",
+          in: "header",
+      },
     }
   },
   // ['.routes/*.js']
-  apis: ["./modules/admin/Controllers/*"]
+  apis: ["./modules/admin/Controllers/*",
+  "./modules/customer/Controllers/*"
+]
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
