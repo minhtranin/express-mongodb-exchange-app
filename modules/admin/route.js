@@ -9,6 +9,7 @@ const admin = require('./Controllers/AuthController')
 router.post('/create',  admin.create)
 router.post('/login', admin.login)
 router.post('/verify', admin.verify)
+router.get('/logout',admin.logout)
 /**auth admin */
 
 
