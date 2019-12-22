@@ -12,4 +12,4 @@ app.listen(process.env.PORT)
 app.get("/",(req,res)=>{return res.redirect('/api-docs')})
 app.use('/api/v1/admin',routerAdmin)
 module.exports = app
-
+console.log(process.env.PORT)
